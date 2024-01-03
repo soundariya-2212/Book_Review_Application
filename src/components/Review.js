@@ -3,7 +3,7 @@ import '../assets/Css/Review.css';
 
 function Review() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [allBooks, setAllBooks] = useState([
+  const [allBooks] = useState([
     {
       title: 'the last true love story',
       description: 'The Last True Love Story is a tender story that is as much about the meaning of family as it is about falling in love.',
