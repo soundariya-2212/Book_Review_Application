@@ -47,7 +47,6 @@ ul{
     color:white;
     list-style: none;
 }
-/* body
-{
-    overflow-y: hidden;
-} */
+.Link,li:hover{
+    color:red;
+}

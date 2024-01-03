@@ -51,7 +51,7 @@ function Register()
         <div className='register-wrapper'>
             <div class="di-wrapper">
         <form class="container-wrapper" onSubmit={fun}>
-            <h1 class="m-wrapper">Registration Form</h1>
+            <h1 class="m-wrapper">Register</h1>
             <input type="text" name="" id="user" placeholder="Your name"class="mad-wrapper" required="required"/>
             <input type="password" name="" id="Password" placeholder="Password" class="mad-wrapper" required/>
             <input type="password" name="" id="ConfirmPassword" placeholder="Confirm Password" class="mad-wrapper" required/>

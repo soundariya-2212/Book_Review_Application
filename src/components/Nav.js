@@ -9,7 +9,7 @@ function Nav()
         </ul> */}
         <div class="nav">
             <ul class="navlinks-wrapper">
-            <li class="title">.ThE MiLLIoNs.</li> 
+            <div class="title">.ThE MiLLIoNs.</div> 
             <Link to ='/Home'><li class="ji">HOME</li></Link>
             <Link to='/Register'><li class="ji">REGISTER</li></Link>
             <Link to ='/Login' ><li class="ji">LOGIN</li></Link>
