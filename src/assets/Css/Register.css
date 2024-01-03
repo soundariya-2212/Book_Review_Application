@@ -1,0 +1,88 @@
+.register-wrapper{
+    height:100vh;
+    width:100vw;
+    margin:0px;
+    background-color: lightgrey;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background: #C9FFBF;
+    background-image: url("https://w0.peakpx.com/wallpaper/748/818/HD-wallpaper-reminiscence-red-rose-book-hand.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.container-wrapper
+{
+    height:82vh;
+    width:25vw;
+    flex-direction: column;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 1rem;
+    border:none;
+    border-radius:1rem;
+    background: transparent;
+    border:3px solid black;
+    backdrop-filter: blur(5px);
+    font-size:larger;
+    box-shadow:
+    0.8px 0.8px 0.2px rgb(31, 31, 31),
+    2.7px 1.7px 1.3px rgb(35, 34, 34),
+    4.5px 3.5px 1px rgb(35, 34, 34),
+    10px 10px 2px rgb(35, 34, 34),
+    5px 5px 5px rgb(104, 102, 102),
+    5px 5px 5px rgb(81, 81, 81); 
+}
+::placeholder
+{
+    color:#fff;
+    font-size:15px;
+    /* border:white; */
+}
+.fir-wrapper
+{
+    height:6vh;
+    width:19vw;
+    margin:none;
+    display:flex;
+    border:none;
+    justify-content:center;
+    align-items: center;
+    background-color:rgb(2, 2, 2);
+    color:white;
+    font-size:large;
+    border-radius:0.5rem;
+} 
+.mad-wrapper
+{
+    height:7vh;
+    width:18vw;
+    margin:none;
+    padding:0.5rem;
+    border:none;
+    border-radius:0.5rem;
+    border:3px solid white;
+    /* background-color: bisque; */
+    color:white;
+    font-size:16px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+}
+.mad:focus{
+    outline:none;
+    border-bottom: 3px solid blueviolet;
+}
+.m-wrapper
+{
+    color:#fff;
+    /* font-size: 20px; */
+}
+.hi-wrapper
+{
+text-decoration: none;
+color:#fff;
+}

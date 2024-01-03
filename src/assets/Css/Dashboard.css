@@ -1,0 +1,371 @@
+.side-bar {
+    height: 100vh;
+    width: 270px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    background-color: black;
+    color: white;
+    font-size: larger;
+    font-family: 'Arial, Helvetica, sans-serif';
+    animation: changeBackgroundColor 5s infinite;
+  }
+  
+  @keyframes changeBackgroundColor {
+    0% {
+      background-color:rgb(54, 51, 51);
+    }
+   
+  }
+  .mow{
+    list-style: none;
+    margin-left:10px;
+    transition: color 0.3s ease;
+    color:white;
+   
+  }
+  .dash
+  {
+    background-color: white;
+  }
+  .d-c
+  {
+    margin-left:10px;
+    top:150px;
+    position:fixed;
+    display:flex;
+    /* padding:20px 15px; */
+  }
+  .icon-text
+  {
+    /* margin-left: 0px; */
+    /* left:40px; */
+    display:flex;
+    /* position:fixed; */
+    transition: background-color 0.3s;
+    height:30px;
+    width:260px;
+    margin-bottom:30px;
+  
+  }
+  .sym
+  {
+    top:68px;
+    left:200px;
+    color:white;
+    font-weight:20px;
+    position:fixed;
+    display:flex;
+  }
+  /* .menu
+  {
+    top:10px;
+    left:10px;
+    position:fixed;
+    display:flex;
+  } */
+  /* .userimg
+  {
+    top:130px;
+    left:40px;
+    position:fixed;
+    display:flex;
+    height:90px;
+    width:90px;
+    border-radius: 50px;;
+   
+  } */
+  .icon-text:hover{
+  
+    background: lightskyblue;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #60d3e2, #13a2f0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #61c4e9, #59dae9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:black;
+    
+  
+  }
+  .hell{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.3s ease;
+  }
+  
+  .hell{
+    font-family:'Times New Roman', Times, serif;
+    top:20px;
+    left:10px;
+    color:white;
+    font-weight:20px;
+    position:fixed;
+    display:flex;
+  }
+  .dt
+  {
+    color:white;
+    top:150px;
+    left:800px;
+  }
+  /* .review-box
+  {
+    top:350px;
+    left:670px;
+    height:200px;
+    width:500px;
+    position:fixed;
+    display:flex;
+    background-color:black;
+    border-radius:7px;
+    color:white;
+    border-color: white;
+    transition:border-color 0.3s;
+    
+  }
+  .review-box:hover{
+    border-color: #F09819;
+  }
+  .save
+  {
+    background-color: blue;
+    border-radius:5px;
+    color:white;
+    font-size: larger;
+    cursor:pointer;
+    height:30px;
+    width:60px;
+    top:590px;
+    left:1100px;
+    position:fixed;
+    display:flex;
+    
+  } */
+  .newyork
+  {
+    top:170px;
+    left:150px;
+    position:fixed;
+    display:flex;
+    font-size: large;
+  }
+  /* .booknamebox
+  {
+    top:260px;
+    left:670px;
+    width:500px;
+    position:fixed;
+    
+    display:flex;
+    background-color: black;
+    height:50px;
+    border-radius:7px;
+    border-color:White;
+    color:white;
+    transition:border-color 0.3s;
+  }
+  .booknamebox:hover{
+    border-color: #F09819;
+  } */
+
+/* About */
+body{
+    background-color:rgb(180, 175, 175);
+}
+.ab
+{
+    top:40px;
+    display:flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+    /* padding-left:300px; */
+    position: fixed;
+
+}
+ .about
+{
+    top:3rem;  
+    left:700px;
+    position: fixed;
+    display:flex;
+} 
+.para
+{
+    top:8rem;  
+    font-size:20px;
+    margin-bottom: 20px;
+    left:280px;
+
+    right:100px;
+    position: fixed;
+    display:flex;
+}
+.edit
+{
+    top:19rem;
+    display:flex;
+    position: fixed;
+    left:280px;
+}
+.name
+{
+    top:21rem;
+    display:flex;
+    position: fixed;
+    left:280px;
+    font-size:20px;
+}
+.web
+{
+    top:23rem;
+    display:flex;
+    position: fixed;
+    left:280px;
+}
+.name1
+{
+    top:25rem;
+    display:flex;
+    position: fixed;
+    left:280px;
+    font-size:20px;
+}
+.intern
+{
+    top:27rem;
+    display:flex;
+    position: fixed;
+    left:280px;
+}
+.name2
+{
+    top:29rem;
+    display:flex;
+    position: fixed;
+    left:280px;
+    font-size:20px;
+}
+.con
+{
+    top:30rem;
+    display:flex;
+    position: fixed;
+    left:280px;
+}
+.content
+{
+    top:32rem;  
+    font-size:20px;
+    left:280px;
+    right:700px;
+    position: fixed;
+    display:flex;
+}
+.footer
+{
+    top:500px;
+    left:270px;
+    position: fixed;
+    display: flex;
+    height:40vh;
+    width:100%;
+    opacity:80%;
+    background-color: #000;
+    overflow-y:auto;
+}
+
+/* footer */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 42px;
+	width: 40px;
+    justify-content: center;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+    padding:7px;
+	text-align: center;
+	line-height: 42px;
+	border-radius: 50%;
+	color:#fff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
