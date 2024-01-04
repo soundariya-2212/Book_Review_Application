@@ -2,19 +2,38 @@ import '../assets/Css/Login.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from 'react-router-dom'
+import {useRef,useState} from 'react';
 // import Dashboard from './components/Dashboard.js'
 // import Sidebar from './Sidebar'
 function Login() {
     const navigate = useNavigate()
-    function fun(event)
+    const username=useRef(null)
+    const [errors,setErrors]=useState({
+        username:'',  
+    })
+    const fun=(e)=>
             {
-                event.preventDefault();
-                let y=document.getElementById("Password").value;
-                let x="1234";
-           
-                if(y===x)
+                e.preventDefault();
+                const data={
+                    username:username.current.value,
+                }
+                console.log(data.username.length)
+                if(data.username.length===0)
                 {
-                        // alert("Password Matched");
+                    setErrors((prevErrors)=>({...prevErrors,username:'username is empty !'}));
+                }
+                else if(data.username.length<6)
+                {
+                    setErrors((prevErrors)=>({...prevErrors,username:'minimum 6 characters'}));
+                }
+                else
+                {
+                    setErrors((prevErrors)=>({...prevErrors,username:''}));
+                    let y = parseInt(document.getElementById('Password').value, 10)
+                    let x=1234;
+                    if(data.username==="soundariya" && y===x)
+                    {
+                        console.log(data.username);
                         toast.success(' Login Successful!', {
                         position: "bottom-right",
                         autoClose: 5000,
@@ -31,7 +50,7 @@ function Login() {
                 }
                 else
                 {
-                    // alert("Password Mismatched");
+                   
                     toast.error('Login failed', {
                         position: "bottom-right",
                         autoClose: 5000,
@@ -44,20 +63,28 @@ function Login() {
                         });
 
                 }
-
-        }
+                    }
+                    username.current.value=''           
+                }
     
     return (
         <>
         {/* <Sidebar/> */}
             <div className='log-wrapper'>
-                <div class="di-wrapper">
-                    <form class="containe-wrapper" onSubmit={fun}>
-                        <h1 class="m1-wrapper">LOGIN</h1>
-                        <input type="text" name="" id="user" placeholder="Your name" class="mad1-wrapper" required />
-                        <input type="password" name="" id="Password" placeholder="Password" class="mad1-wrapper" required/>
-                        <div class="fun1-wrapper">
-                        <button class="fir1-wrapper" type="submit">Login</button>
+                <div className="di-wrapper">
+                    <form className="containe-wrapper" onSubmit={fun}>
+                        <h1 className="m1-wrapper">LOGIN</h1>
+                        <input type="text" name="" id="user" placeholder="Username" ref={username} className="mad1-wrapper"/>
+                        {
+                        errors.username===''?
+                        '':
+                        <span className='error-comp'>
+                            {errors.username}
+                        </span>
+                }
+                        <input type="password" name="" id="Password" placeholder="Password" className="mad1-wrapper" required/>
+                        <div className="fun1-wrapper">
+                        <button className="fir1-wrapper" type="submit">Login</button>
                         </div >
                     </form>
                 </div>
@@ -74,18 +101,6 @@ function Login() {
         pauseOnHover
         theme="dark"
         />
-        <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
-            />
         </>
     )
 }
