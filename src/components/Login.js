@@ -1,107 +1,85 @@
-import '../assets/Css/Login.css';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {useNavigate} from 'react-router-dom'
-import {useRef,useState} from 'react';
-// import Dashboard from './components/Dashboard.js'
-// import Sidebar from './Sidebar'
-function Login() {
-    const navigate = useNavigate()
-    const username=useRef(null)
-    const [errors,setErrors]=useState({
-        username:'',  
-    })
-    const fun=(e)=>
-            {
-                e.preventDefault();
-                const data={
-                    username:username.current.value,
-                }
-                console.log(data.username.length)
-                if(data.username.length===0)
-                {
-                    setErrors((prevErrors)=>({...prevErrors,username:'username is empty !'}));
-                }
-                else if(data.username.length<6)
-                {
-                    setErrors((prevErrors)=>({...prevErrors,username:'minimum 6 characters'}));
-                }
-                else
-                {
-                    setErrors((prevErrors)=>({...prevErrors,username:''}));
-                    let y = parseInt(document.getElementById('Password').value, 10)
-                    let x=1234;
-                    if(data.username==="soundariya" && y===x)
-                    {
-                        console.log(data.username);
-                        toast.success(' Login Successful!', {
-                        position: "bottom-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "dark",
-                        });
-                        setTimeout(()=>{
-                            navigate('/Dashboard')
-                    },5000)
-                }
-                else
-                {
-                   
-                    toast.error('Login failed', {
-                        position: "bottom-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "dark",
-                        });
+import { useNavigate } from 'react-router-dom';
+import '../assets/Css/Login.css'
+const Login = () => {
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        username: '',
+        password: ''
+    });
 
-                }
-                    }
-                    username.current.value=''           
-                }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8080/api/v1/user/login', formData);
+            console.log(response.data);
+            toast.success('Login successful!', {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            const userDataResponse = await axios.get('http://localhost:8080/api/v1/user/data'); // Replace with your actual endpoint to fetch user data
+            console.log(userDataResponse.data); // Assuming userDataResponse contains user data
     
+            navigate('/dashboard'); // Redirect to dashboard after successful login
+        } catch (error) {
+            console.error(error);
+            // alert('error');
+            toast.error('Invalid username or password', {
+                position: "bottom-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            }
+            );
+        }
+    };
+
     return (
         <>
-        {/* <Sidebar/> */}
             <div className='log-wrapper'>
                 <div className="di-wrapper">
-                    <form className="containe-wrapper" onSubmit={fun}>
+                    <form className="containe-wrapper" onSubmit={handleSubmit}>
                         <h1 className="m1-wrapper">LOGIN</h1>
-                        <input type="text" name="" id="user" placeholder="Username" ref={username} className="mad1-wrapper"/>
-                        {
-                        errors.username===''?
-                        '':
-                        <span className='error-comp'>
-                            {errors.username}
-                        </span>
-                }
-                        <input type="password" name="" id="Password" placeholder="Password" className="mad1-wrapper" required/>
+                        <input type="text" name="username" placeholder="Username" className="mad1-wrapper" required onChange={handleChange} />
+                        <input type="password" name="password" placeholder="Password" className="mad1-wrapper" required onChange={handleChange} />
                         <div className="fun1-wrapper">
-                        <button className="fir1-wrapper" type="submit">Login</button>
-                        </div >
+                            <button className="fir1-wrapper" type="submit">Login</button>
+                        </div>
                     </form>
                 </div>
             </div>
-        <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        />
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </>
     )
 }
+
 export default Login;
